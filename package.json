@@ -1,0 +1,10 @@
+{
+	"name": "taboomeat",
+	"description": "taboo meat",
+	"author": "A confused individual <renatomoitinhodias@gmail.com>",
+	"dependencies": {
+		"express": "*",
+		"underscore": "*",
+		"jade": "*"
+	}
+}
