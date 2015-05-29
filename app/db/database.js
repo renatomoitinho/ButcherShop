@@ -5,17 +5,17 @@ var Promise = require('promise'),
 
 function getQuery(queryName) {
 	var arry = querys[queryName];
-	if (!arry)
-		throw "not query found!"
+	if (!arry) {
+		throw "not query found! " + queryName
+	}
 	return querys[queryName].join("");
 }
 
 db.serialize(function() {
 	db.run(getQuery('counts.create'));
-	db.run(getQuery('counts.insert'),["counter", 0]);
-	// db.each("SELECT VALUE FROM COUNTS", function(err,row){
-	// 	console.log(row);
-	// });
+	db.run(getQuery('profile.create'));
+	db.run(getQuery('cookies.create'));
+	db.run(getQuery('profile_cookies.create'));
 });
 
 function DataSupport() {

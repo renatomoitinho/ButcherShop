@@ -1,0 +1,9 @@
+{
+	"profile.create": [
+		"CREATE TABLE IF NOT EXISTS PROFILE(",
+		"    ID INTEGER PRIMARY KEY,",
+		"    NAME VARCHAR(255),",
+		"    EMAIL VARCHAR(200),",
+		"    PASSWORD VARCHAR(50))"
+	]
+}

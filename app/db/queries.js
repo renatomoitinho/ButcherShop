@@ -1,25 +1,9 @@
-module.exports = {
+var it = require('underscore');
+var normalizedPath = require("path").join(__dirname, "./schemes");
+var schemes = {}
 
-	"counts.create": [
-		" CREATE TABLE ",
-		" IF NOT EXISTS COUNTS (KEY TEXT, VALUE INTEGER)"
-	],
+require("fs").readdirSync(normalizedPath).forEach(function(file) {
+  it.extend(schemes,require("./schemes/" + file));
+});
 
-	"counts.insert": [
-		" INSERT INTO COUNTS (KEY, VALUE)",
-		" VALUES (?, ?)"
-	],
-
-	"counts.update": [
-		" UPDATE COUNTS ",
-		" SET VALUE = VALUE + 1 WHERE KEY = ?"
-	],
-
-	"counts.value": [
-		"SELECT VALUE FROM COUNTS"
-	],
-
-	"counts.all": [
-		"SELECT * FROM COUNTS"
-	]
-};
+module.exports = schemes;
