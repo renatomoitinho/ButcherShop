@@ -5,6 +5,8 @@
 	"dependencies": {
 		"express": "*",
 		"underscore": "*",
-		"jade": "*"
+		"jade": "*",
+		"sqlite3": "~2.2.3",
+		"promise":"*"
 	}
 }
