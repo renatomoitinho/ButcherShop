@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+  head
+    title Meat Handler Application
+    meta(charset='utf-8')
+    meta(content='IE=edge', http-equiv='X-UA-Compatible')
+    meta(content='width=device-width, initial-scale=1', name='viewport')
+    meta(content='', name='description')
+    meta(content='', name='author')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+    link(rel='stylesheet', href='/css/fuctions.css')
+    link(rel='stylesheet', href='/css/callout.css')
+
+  body
+    .nav.navbar.navbar-default.navbar-fixed-top
+      include ./base-head.jade
+    .container
+      block container
+    footer.footer
+      include ./base-footer.jade
+
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+    script(src="http://getbootstrap.com/dist/js/bootstrap.min.js")

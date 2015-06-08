@@ -4,9 +4,14 @@
 	"author": "A confused individual <renatomoitinhodias@gmail.com>",
 	"dependencies": {
 		"express": "*",
+        "express-session": "*",
 		"underscore": "*",
 		"jade": "*",
 		"sqlite3": "~2.2.3",
-		"promise":"*"
+		"promise":"*",
+        "body-parser":"*",
+        "cookie-parser":"*",
+        "multer":"*",
+        "MD5":"*"
 	}
 }

@@ -1,0 +1,30 @@
+doctype html
+html(lang='en')
+  head
+    title Meat Handler Application
+    meta(charset='utf-8')
+    meta(content='IE=edge', http-equiv='X-UA-Compatible')
+    meta(content='width=device-width, initial-scale=1', name='viewport')
+    meta(content='', name='description')
+    meta(content='', name='author')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css')
+
+  body
+    .container.login-box
+      form.form-signin(action='/profile/authenticate',method='post')
+        h2.form-signin-heading Identifique-se
+        if error
+            div
+              strong Ops!&nbsp;
+              a.alert-link(href='#') #{error}
+
+        label.sr-only(for='inputEmail') email
+        input#inputEmail.form-control(type='email', autofocus='', required='', placeholder='Email address',name='email')
+        label.sr-only(for='inputPassword') senha
+        input#inputPassword.form-control(type='password', required='', placeholder='Password',name='password')
+        .checkbox
+          label
+            input(type='checkbox', value='remember-me', name='rememberme')
+            |  continuar conectado
+        button.btn.btn-lg.btn-primary.btn-block(type='submit') conectar!

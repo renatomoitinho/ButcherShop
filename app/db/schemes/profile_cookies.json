@@ -1,10 +1,15 @@
 {
-	"profile_cookies.create": [
-		"CREATE TABLE IF NOT EXISTS PROFILE_COOKIES(",
-		"    ID_COOKIE INTEGER ,",
-		"    ID_PROFILE INTEGER ,",
-		"    PRIMARY KEY(ID_COOKIE, ID_PROFILE),",
-		"    FOREIGN KEY(ID_COOKIE) REFERENCES COOKIES(ID),",
-		"    FOREIGN KEY(ID_PROFILE) REFERENCES PROFILE(ID))"
-	]
+    "profile_cookies.create": [
+        "create table if not exists profile_cookies(",
+        "    id_cookie integer ,",
+        "    id_profile integer ,",
+        "    primary key(id_cookie, id_profile),",
+        "    foreign key(id_cookie) references cookies(id),",
+        "    foreign key(id_profile) references profile(id))"
+    ],
+
+    "profile.cookies.insert": [
+        "insert into profile_cookies(id_cookie,id_profile) ",
+        "values(?,?)"
+    ]
 }

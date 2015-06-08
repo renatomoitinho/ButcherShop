@@ -1,7 +1,31 @@
 {
-	"cookies.create": [
-		"CREATE TABLE IF NOT EXISTS COOKIES(",
-		"    ID INTEGER PRIMARY KEY,",
-		"    NAME INTEGER NOT NULL UNIQUE)"
-	]
+    "cookies.create": [
+        "create table if not exists cookies(",
+        "    id integer primary key,",
+        "    cookie_name varchar(255),",
+        "    cookie_value text not null unique)"
+    ],
+
+    "cookie.index": [
+        "select count(*) + 1 as next from cookies"
+    ],
+
+    "cookie.insert": [
+        " insert into cookies(id,cookie_name,cookie_value)",
+        " values(?,?,?)"
+    ],
+
+    "cookie.all": [
+        " select * from cookies"
+    ],
+    "cookie.find.name": [
+        "select * from cookies where lower(cookie_value) = lower(?)"
+    ],
+
+    "cookie.findBy.value":[
+        " select p.name,p.email from cookies as co",
+        " inner join profile_cookies as pco on co.id = pco.id_cookie",
+        " inner join profile as p on pco.id_profile = p.id",
+        " where lower(cookie_value) = lower(?)"
+    ]
 }

@@ -1,0 +1,43 @@
+extends ../base-template.jade
+block container
+    .panel.panel-default
+      .panel-heading
+        unless edit
+         .row
+           .col-md-8
+             a(data-toggle="collapse",href="#collapseExample")
+               span.glyphicon.glyphicon-plus(aria-hidden="true")
+               | Adicionar Usuários
+           .col-md-4
+             .input-group
+              span.input-group-btn
+                button.btn.btn-default(type="button") Go!
+              input.form-control(type="text", placeholder="procure por ... nome ou email")
+
+       if edit
+        #collapseExample.panel-body
+         include ./form.jade
+
+       else
+        #collapseExample.panel-body.collapse
+         include ./form.jade
+
+      if profiles
+          table.table.table-hover
+            thead
+              tr
+                th #
+                th Nome
+                th @mail
+                th @admin
+            tbody
+             each profile in profiles
+              tr
+                th(scope="row")
+                  a(href="/meat/profile/#{profile.id}/edit")
+                   span.glyphicon.glyphicon-eye-open(aria-hidden="true")
+                td #{profile.name}
+                td #{profile.email}
+                td no
+
+    script(src='/js/users.form.js')

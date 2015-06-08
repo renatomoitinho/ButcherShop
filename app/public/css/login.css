@@ -1,0 +1,19 @@
+#login{
+
+}
+
+#login h2{
+    text-align: center;
+}
+
+#login input[type="email"], input[type="password"]{
+    width: 100%;
+}
+
+#login button{
+    width: 100%;
+}
+
+#login .button-large {
+    font-size: 130%;
+}

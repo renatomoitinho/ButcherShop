@@ -1,0 +1,43 @@
+- var empty = ''
+
+form#profile(method="post", action="#{!profile.id ? global.safe('/profile/new') : global.safe('/profile/'+profile.id+'/update')}")
+ .row.bs-callout.bs-callout-info
+  .col-md-8
+     h4 Controle
+  .col-md-4
+    .btn-group.btn-group-justified(role="group", aria-label="...")
+      unless edit
+       .btn-group(role="group")
+         button.btn.btn-default.btn-lg(type="submit")
+           span.glyphicon.glyphicon-plus(aria-hidden="true")
+           | Criar
+      unless !edit
+       .btn-group(role="group")
+         button.btn.btn-default(type="submit")
+          span.glyphicon.glyphicon-edit(aria-hidden="true")
+          | Editar
+
+      unless !edit
+       .btn-group(role="group")
+          button#profile-remove.btn.btn-default(type="button", onclick="submitProfile(this)", data-target="#{global.safe('/profile/'+ profile.id + '/remove')}")
+           span.glyphicon.glyphicon-trash(aria-hidden="true")
+           | Deletar
+
+
+ fielset
+  .form-group
+    label(for="profileName") Nome
+    input#profileName.form-control(name="name",type="text", placeholder="nome", value="#{!profile.name ? empty : profile.name}")
+  .form-group
+    label(for="profileEmail") Email
+    input#profileEmail.form-control(name="email",type="email", placeholder="email",value="#{!profile.email ? empty : profile.email}")
+  .form-group
+    label(for="profilePassword") senha
+    input#profilePassword.form-control(name="confirmPassword",type="password", placeholder="senha", value="#{!profile.password ? empty : profile.password}")
+  .form-group
+    label(for="profilePassword") Confirmar senha
+    input#profilePassword.form-control(name="password",type="password", placeholder="confirmar senha",value="#{!profile.password ? empty : profile.password}")
+  .checkbox
+    label
+      input(type="checkbox")
+      | permissão administrador?

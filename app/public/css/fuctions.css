@@ -1,0 +1,36 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+body {
+    margin-bottom: 60px;
+}
+.footer {
+    background-color: #f5f5f5;
+    bottom: 0;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+body > .container {
+    padding: 60px 15px 0;
+}
+.container .text-muted {
+    margin: 20px 0;
+}
+.footer > .container {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.no-margin{
+    margin: 0px !important;;
+}
+
+.no-padding{
+    margin: 0px !important;;
+}
+
+.full-width{
+    width: 100% !important;
+}

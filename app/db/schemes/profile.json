@@ -1,9 +1,35 @@
 {
-	"profile.create": [
-		"CREATE TABLE IF NOT EXISTS PROFILE(",
-		"    ID INTEGER PRIMARY KEY,",
-		"    NAME VARCHAR(255),",
-		"    EMAIL VARCHAR(200),",
-		"    PASSWORD VARCHAR(50))"
-	]
+    "profile.create": [
+        "CREATE TABLE IF NOT EXISTS PROFILE(",
+        "    ID INTEGER PRIMARY KEY,",
+        "    NAME VARCHAR(255),",
+        "    EMAIL VARCHAR(200),",
+        "    PASSWORD VARCHAR(50))"
+    ],
+
+    "profile.insert": [
+        " INSERT INTO PROFILE(ID, NAME, EMAIL,PASSWORD)",
+        " VALUES((SELECT COUNT(*) FROM PROFILE) + 1 ,?, ?, ?)"
+    ],
+
+    "profile.update": [
+        " UPDATE PROFILE ",
+        " SET NAME = ?, EMAIL=?,PASSWORD=? WHERE ID=?"
+    ],
+
+    "profile.delete": [
+        "DELETE FROM PROFILE WHERE ID=?"
+    ],
+
+    "profile.byId":[
+        "SELECT * FROM PROFILE WHERE ID=?"
+    ],
+
+    "profile.auth":[
+        "SELECT * FROM PROFILE WHERE EMAIL=? AND PASSWORD=?"
+    ],
+
+    "profile.all":[
+        "SELECT * FROM PROFILE"
+    ]
 }
