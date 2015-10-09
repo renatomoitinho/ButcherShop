@@ -1,10 +1,12 @@
 ## node express sqlite promise multiples routes application taboomeat
 
 ```sh
-npm install
+$ npm install
 ```
 ```sh
-node app/app.js
+$ node app/app.js
 ```
 
-[demo in heroku]:<http://meatmeat.herokuapp.com/> 
+visit page: (http://localhost:3000/)
+
+[demo in heroku](http://meatmeat.herokuapp.com/) 
