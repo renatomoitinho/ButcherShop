@@ -7,6 +7,6 @@ $ npm install
 $ node app/app.js
 ```
 
-visit page: (http://localhost:3000/)
+visit page: [local page](http://localhost:3000/)
 
 [demo in heroku](http://meatmeat.herokuapp.com/) 
